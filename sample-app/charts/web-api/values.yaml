@@ -1,0 +1,5 @@
+serviceName: web-app
+replicaCount: 2
+
+# Port configuration
+servicePort: 9099
