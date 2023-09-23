@@ -1,20 +1,15 @@
-apiVersion: argoproj.io/v1alpha1
-kind: AppProject
-metadata:
-  name: sample-app
-  namespace: argocd
-spec:
-  clusterResourceWhitelist:
-    - group: '*'
-      kind: '*'
-  description: This is just an example.
-  destinations:
-    - name: in-cluster
-      namespace: sample-app
-      server: 'https://kubernetes.default.svc/'
-  namespaceResourceWhitelist:
-    - group: '*'
-      kind: '*'
-  sourceRepos:
-    - 'https://github.com/Kulivox/dt-sample-helm-chart.git'
-status: {}
+project: sample-app
+source:
+  repoURL: 'https://github.com/Kulivox/dt-sample-helm-chart.git'
+  path: sample-app
+  targetRevision: HEAD
+  helm:
+    valueFiles:
+      - values.yaml
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: sample-app
+syncPolicy:
+  automated: {}
+  syncOptions:
+    - CreateNamespace=true
