@@ -10,7 +10,7 @@ spec:
     createNamespace: true
   chart:
     spec:
-      chart: ./sample-app
+      chart: "./sample-app"
       reconcileStrategy: Revision 
       interval: 1m     
       sourceRef:
