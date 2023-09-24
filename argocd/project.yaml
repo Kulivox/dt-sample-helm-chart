@@ -10,8 +10,8 @@ spec:
   description: App used to automatically create cluster apps on push
   destinations:
     - name: in-cluster
-      namespace: argocd
-      server: 'https://kubernetes.default.svc/'
+      namespace: 'argocd'
+      server: 'https://kubernetes.default.svc'
   namespaceResourceWhitelist:
     - group: '*'
       kind: '*'
