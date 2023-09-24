@@ -2,9 +2,8 @@ apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmChart
 metadata:
   name: sample-app
-  namespace: flux-system
+  namespace: sample-app-flux
 spec:
-  targetNamespace: sample-app-flux
   interval: 5m
   chart: ./sample-app
   reconcileStrategy: Revision 
