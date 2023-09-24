@@ -10,7 +10,7 @@ spec:
   description: Project containing normal apps
   destinations:
     - name: in-cluster
-      namespace: argocd
+      namespace: '*'
       server: 'https://kubernetes.default.svc'
   namespaceResourceWhitelist:
     - group: '*'
