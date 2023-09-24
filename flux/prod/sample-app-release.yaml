@@ -1,0 +1,18 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: podinfo
+  namespace: sample-app-flux
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: ./sample-app
+      version: '>=0.1.0'
+      sourceRef:
+        kind: GitRepository
+        name: podinfo
+        namespace: flux-system
+      interval: 1m
+  values:
+    replicaCount: 2
