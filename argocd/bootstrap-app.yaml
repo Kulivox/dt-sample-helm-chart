@@ -1,15 +1,13 @@
-project: sample-app
+project: app-bootstrap
 source:
   repoURL: 'https://github.com/Kulivox/dt-sample-helm-chart.git'
-  path: sample-app
+  path: argocd/app-bootstrap
   targetRevision: HEAD
   helm:
     valueFiles:
       - values.yaml
 destination:
   server: 'https://kubernetes.default.svc'
-  namespace: sample-app
+  namespace: argocd
 syncPolicy:
   automated: {}
-  syncOptions:
-    - CreateNamespace=true
