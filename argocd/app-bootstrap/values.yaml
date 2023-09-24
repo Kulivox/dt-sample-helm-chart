@@ -1,0 +1,3 @@
+projectName: helm-app
+appNamespace: sample-app-argo
+sourceRepository: https://github.com/Kulivox/dt-sample-helm-chart.git

@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-app
+  namespace: argocd
+spec:
+  project: {{ .Values.projectName }}
+  source:
+    repoURL: 'https://github.com/Kulivox/dt-sample-helm-chart.git'
+    path: sample-app
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: {{ .Values.appNamespace }}
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true
