@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: sample-app
+  name: app-bootstrap
   namespace: argocd
 spec:
   clusterResourceWhitelist:
     - group: '*'
       kind: '*'
-  description: This is just an example.
+  description: App used to automatically create cluster apps on push
   destinations:
     - name: in-cluster
-      namespace: sample-app
+      namespace: argocd
       server: 'https://kubernetes.default.svc/'
   namespaceResourceWhitelist:
     - group: '*'
