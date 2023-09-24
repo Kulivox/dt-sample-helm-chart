@@ -1,15 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
-project: app-bootstrap
-source:
-  repoURL: 'https://github.com/Kulivox/dt-sample-helm-chart.git'
-  path: argocd/app-bootstrap
-  targetRevision: HEAD
-  helm:
-    valueFiles:
-      - values.yaml
-destination:
-  server: 'https://kubernetes.default.svc'
-  namespace: argocd
-syncPolicy:
-  automated: {}
+spec:
+  project: app-bootstrap
+  source:
+    repoURL: 'https://github.com/Kulivox/dt-sample-helm-chart.git'
+    path: argocd/app-bootstrap
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: argocd
+  syncPolicy:
+    automated: {}
