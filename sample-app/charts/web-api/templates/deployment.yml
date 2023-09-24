@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
       - name: {{ .Values.serviceName }}
-        image: my-web-app:1.2.0      
+        image: my-web-app:1.3.0      
