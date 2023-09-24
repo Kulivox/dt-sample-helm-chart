@@ -6,13 +6,8 @@ metadata:
 spec:
   targetNamespace: sample-app-flux
   interval: 5m
-  install:
-    createNamespace: true
-  chart:
-    spec:
-      chart: "./sample-app"
-      reconcileStrategy: Revision 
-      interval: 1m     
-      sourceRef:
-        kind: GitRepository
-        name: sample-app
+  chart: ./sample-app
+  reconcileStrategy: Revision 
+  sourceRef:
+    kind: GitRepository
+    name: sample-app
