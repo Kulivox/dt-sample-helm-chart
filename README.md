@@ -5,6 +5,7 @@ The deployment can be tested by port forwarding service `web-app` by using follo
 
 `kubectl port-forward -n <namespace> service/web-app 9099:9099`
 
+Note: The web app can be any container with an exposed port `80`. You only have to tag it correctly.
 ## CD tool integrations
 
 ### Flux
