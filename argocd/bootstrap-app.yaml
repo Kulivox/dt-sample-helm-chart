@@ -1,3 +1,5 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
 project: app-bootstrap
 source:
   repoURL: 'https://github.com/Kulivox/dt-sample-helm-chart.git'
