@@ -10,7 +10,7 @@ spec:
   description: Project containing normal apps
   destinations:
     - name: in-cluster
-      namespace: '*'
+      namespace: {{ .Values.appNamespace }}
       server: 'https://kubernetes.default.svc'
   namespaceResourceWhitelist:
     - group: '*'
