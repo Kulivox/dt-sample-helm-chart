@@ -11,6 +11,7 @@ spec:
   chart:
     spec:
       chart: ./sample-app
+      reconcileStrategy: Revision 
       sourceRef:
         kind: GitRepository
         name: sample-app
