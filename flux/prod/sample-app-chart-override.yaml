@@ -1,0 +1,12 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmChart
+metadata:
+  name: sample-app
+  namespace: sample-app-flux
+spec:
+  interval: 5m
+  chart: ./sample-app
+  reconcileStrategy: Revision 
+  sourceRef:
+    kind: GitRepository
+    name: sample-app
