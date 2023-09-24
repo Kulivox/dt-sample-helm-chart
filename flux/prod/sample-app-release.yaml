@@ -1,7 +1,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: podinfo
+  name: sample-app
   namespace: sample-app-flux
 spec:
   interval: 5m
@@ -11,7 +11,7 @@ spec:
       version: '>=0.1.0'
       sourceRef:
         kind: GitRepository
-        name: podinfo
+        name: sample-app
         namespace: flux-system
       interval: 1m
   values:
